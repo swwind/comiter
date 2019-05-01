@@ -1,0 +1,16 @@
+{
+  "name": "comiter",
+  "version": "1.0.0",
+  "description": "A comit downloader",
+  "repository": "https://github.com/swwind/comiter",
+  "author": "swwind <swwind233@gmail.com>",
+  "license": "MIT",
+  "bin": {
+    "comiter": "./bin/comiter"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.3",
+    "colors": "^1.3.3"
+  }
+}

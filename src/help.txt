@@ -1,0 +1,18 @@
+comiter - A comic downloader
+
+USAGE
+
+  $ comiter [options] [URL]
+
+  URL                 Comic online url
+  options             Download options
+
+    // TODO
+
+EXAMPLE
+
+  $ comiter "https://manhua.dmzj.com/biedangounijiangle"
+
+CONTRIBUTOR
+
+  - swwind <swwind233@gmail.com>
