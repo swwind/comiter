@@ -1,15 +1,24 @@
 # comiter
 
-一个用来下载漫画的 nodejs 应用。
+A comic downloader.
 
-使用方法：
+## Install
 
 ```bash
-comiter [url]
-# e.g.
-comiter "https://manhua.dmzj.com/biedangounijiangle"
+npm install comiter -g
+# or
+yarn global add comiter
 ```
 
-支持列表：
+## Usage
 
-- 动漫之家
+```bash
+comiter [options] [url]
+# e.g.
+comiter "https://manhua.dmzj.com/biedangounijiangle"
+# Automaticly download to current directory
+```
+
+## Support List
+
+- [动漫之家](https://manhua.dmzj.com/)
