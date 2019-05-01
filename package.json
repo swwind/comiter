@@ -1,6 +1,6 @@
 {
   "name": "comiter",
-  "version": "1.0.0",
+  "version": "1.0.0-alpha.0",
   "description": "A comit downloader",
   "repository": "https://github.com/swwind/comiter",
   "author": "swwind <swwind233@gmail.com>",
