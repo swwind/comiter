@@ -10,6 +10,7 @@ const series = require('../series');
 const MAIN_DOMAIN = 'https://manhua.dmzj.com/';
 const IMAGE_DOMAIN = 'https://images.dmzj.com/';
 
+// parse file list and download them
 const parseImage = (url) => () => {
   return axios.get(url)
     .then(({ data }) => {
@@ -18,10 +19,11 @@ const parseImage = (url) => () => {
       return series(arr_pages.map((page) => download.bind(null, 
         IMAGE_DOMAIN + page,
         path.resolve(process.cwd(), g_comic_name, g_chapter_name, path.basename(page)),
-        MAIN_DOMAIN)));
+        { Referer: MAIN_DOMAIN })));
     }, error);
 }
 
+// fetch caption list
 module.exports = (mid) => {
   return axios.get(MAIN_DOMAIN + mid)
     .then(({ data }) => {

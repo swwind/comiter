@@ -5,9 +5,7 @@ const path = require('path');
 const axios = require('axios');
 const { error, warn, info } = require('./alert');
 
-const URL = require('url');
-
-const download = (url, savepath, ref, retry = 1) => {
+const download = (url, savepath, headers, fallbackurl = []) => {
 
   const simplifed = savepath.replace(process.cwd(), '.');
   if (fs.existsSync(savepath) && fs.lstatSync(savepath).size > 0) {
@@ -23,22 +21,19 @@ const download = (url, savepath, ref, retry = 1) => {
     });
   }
 
-  const parsedURL = URL.parse(url);
-  const referer = ref || (parsedURL.protocol + '//' + parsedURL.hostname);
-  // console.log(referer);
-
   return axios.get(url, {
     responseType: 'arraybuffer',
-    headers: {
-      Referer: referer
-    }
+    headers,
   }).then((res) => {
     fs.writeFileSync(savepath, res.data);
     info('Saved to ' + simplifed);
   }, (err) => {
-    error(`[${retry}/3] Failed to download ${url}`);
-    if (retry < 3) {
-      return download(url, savepath, ref, retry + 1);
+    error(`Failed to download ${url}`);
+    error(err.toString());
+    if (fallbackurl.length) {
+      const fallback = fallbackurl.shift();
+      error('Trying fallback ' + fallback);
+      return download(fallback, savepath, headers, fallbackurl);
     }
   })
 }
