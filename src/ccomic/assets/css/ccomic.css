@@ -24,5 +24,66 @@ body, html {
   left: 0;
   height: 75px;
   width: 100%;
-  background: linear-gradient(transparent, black);
+  background: rgba(0, 0, 0, .4);
+  display: flex;
+  user-select: none;
+}
+
+.nav .leftpage, .nav .rightpage {
+  width: 20%;
+  height: 75px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.nav .leftpage:hover, .nav .rightpage:hover {
+  background-color: rgba(255, 255, 255, .2);
+}
+
+.nav .leftpage::before, .nav .leftpage::after,
+.nav .rightpage::before, .nav .rightpage::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background: white;
+}
+
+.nav .leftpage::before {
+  left: calc(50% - 20px);
+  top: calc(50% - 10px);
+  transform: rotate(-45deg);
+}
+
+.nav .leftpage::after {
+  left: calc(50% - 20px);
+  top: calc(50% + 10px);
+  transform: rotate(45deg);
+}
+
+.nav .rightpage::before {
+  right: calc(50% - 20px);
+  top: calc(50% - 10px);
+  transform: rotate(45deg);
+}
+
+.nav .rightpage::after {
+  right: calc(50% - 20px);
+  top: calc(50% + 10px);
+  transform: rotate(-45deg);
+}
+
+.nav .pages {
+  flex: 1;
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+  text-shadow: 0px 0px 2px black;
+  line-height: 75px;
+}
+
+.nav .pages div {
+  display: inline-block;
 }

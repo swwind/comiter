@@ -10,7 +10,13 @@ html(lang="en")
     .container
       for item in list
         img.picture(src=item.link, alt=item.name)
-    .nav hello world
+    .nav
+      .leftpage
+      .pages
+        .nowpage#nowpage 1
+        | /
+        .allpages= list.length
+      .rightpage
     script.
       window.$data = !{JSON.stringify(list)};
     script(src="/assets/js/ccomic.js")
