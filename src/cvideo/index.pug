@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    script(src="/dplayer/DPlayer.min.js")
+    link(rel="stylesheet", href="/dplayer/DPlayer.min.css")
+    link(rel="stylesheet", href="/assets/css/cvideo.css")
+    title= title + ' - cvideo'
+  body
+    .container
+      .video
+        #video
+      .playlist
+        .title Episodes
+        for item, index in list
+          .item(data-src=index)= item.name
+    script.
+      window.$data = !{JSON.stringify(list)};
+    script(src="/assets/js/cvideo.js")

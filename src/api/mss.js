@@ -32,7 +32,7 @@ const parseList = (title, lang, mid, vid) => {
   return axios.get(LIST({ lang, mid }))
     .then((res) => {
       const galleryinfo = JSON.parse(res.data.slice(18).replace('},]', '}]'));
-      return series(galleryinfo.map(({ lan, name }) => download.bind(null,
+      return Promise.all(galleryinfo.map(({ lan, name }) => download(
         // cdn url
         LCDNDOWNLOAD({ lang: lan, vid, name }),
         // saved path

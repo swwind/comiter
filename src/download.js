@@ -24,6 +24,7 @@ const download = (url, savepath, headers, fallbackurl = []) => {
   return axios.get(url, {
     responseType: 'arraybuffer',
     headers,
+    timeout: 5000,
   }).then((res) => {
     fs.writeFileSync(savepath, res.data);
     info('Saved to ' + simplifed);

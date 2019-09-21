@@ -16,10 +16,17 @@ yarn global add comiter
 ## Usage
 
 ```bash
+# ==== Download comics ====
 comiter [options] [url]
 # e.g.
 comiter "https://manhua.dmzj.com/biedangounijiangle"
 # Automaticly download to a new sub directory
+
+# ==== Watch local videos ====
+cvideo [folder_name]
+
+# ==== Read local comics ====
+ccomic [folder_name]
 ```
 
 ## Support List

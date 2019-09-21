@@ -1,0 +1,16 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    link(rel="stylesheet", href="/assets/css/ccomic.css")
+    title= title + ' - ccomic'
+  body.row
+    .container
+      for item in list
+        img.picture(src=item.link, alt=item.name)
+    .nav hello world
+    script.
+      window.$data = !{JSON.stringify(list)};
+    script(src="/assets/js/ccomic.js")

@@ -1,0 +1,70 @@
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+.playlist .title {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+.playlist .item {
+  margin: 10px 0;
+  padding: 10px;
+  background: rgba(0, 0, 0, .05);
+  border: solid 1px transparent;
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.playlist .item:hover {
+  background: white;
+  border: solid 1px rgba(0, 0, 0, .2);
+}
+
+.playlist .item.playing {
+  background: white;
+  border: solid 1px rgb(8, 171, 221);
+  color: rgb(8, 171, 221);
+}
+
+@media only screen and (max-width: 1300px) {
+
+  .playlist, .video {
+    display: block;
+  }
+
+  .playlist {
+    margin: 20px;
+    padding: 20px 0;
+  }
+
+  h1 {
+    display: none;
+  }
+
+}
+
+@media only screen and (min-width: 1001px) and (max-width: 1300px) {
+  .container {
+    width: 1000px;
+    margin: 50px auto;
+  }
+}
+
+@media only screen and (min-width: 1301px) {
+
+  .playlist {
+    padding: 20px;
+    margin-left: 10px;
+  }
+
+  .container {
+    display: flex;
+    width: 1300px;
+    margin: 50px auto;
+  }
+
+  .video {
+    width: 900px;
+  }
+}
