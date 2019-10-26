@@ -28,6 +28,7 @@ const main = async () => {
   const app = express();
   app.use('/assets', express.static(path.resolve(__dirname, 'assets')));
   app.use('/dplayer', express.static(path.resolve(__dirname, '..', '..', 'node_modules', 'dplayer', 'dist')));
+  app.use('/flvjs', express.static(path.resolve(__dirname, '..', '..', 'node_modules', 'flv.js', 'dist')));
   app.use(express.static(dirname));
   app.use('/', (req, res, next) => {
     if (req.url === '/') {
